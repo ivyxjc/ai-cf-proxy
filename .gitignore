@@ -1,3 +1,4 @@
+.idea
 # Logs
 
 logs
@@ -8,7 +9,7 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
-# Diagnostic reports (https://nodejs.org/api/report.html)
+# Diagnostic reports (https://nodejs.or/api/report.html)
 
 report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 

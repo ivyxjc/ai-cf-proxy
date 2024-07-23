@@ -6,16 +6,11 @@ compatibility_date = "2024-03-20"
 # Note: Use secrets to store sensitive data.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 [env.prod.vars]
+OPENAI_GATEWAY = "https://gateway.ai.cloudflare.com/v1/ab057378a14adc614c673b8531509c11/openai-proxy-gateway/openai"
 GEMINI_GATEWAY = "https://generativelanguage.googleapis.com"
+ANTHROPIC_GATEWAY = "https://api.anthropic.com"
 
 [[env.prod.kv_namespaces]]
-binding = "KV"
-id = "37d0b87ee3394fb6b080cdda4cb882fe"
-
-[env.dev.vars]
-GEMINI_GATEWAY = "https://generativelanguage.googleapis.com"
-
-[[env.dev.kv_namespaces]]
 binding = "KV"
 id = "37d0b87ee3394fb6b080cdda4cb882fe"
 

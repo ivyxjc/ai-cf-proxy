@@ -10,6 +10,7 @@
 
 import handleOpenAI from './openai-proxy';
 import handleGemini from './gemini-proxy';
+import handleAntrophic from './antrophic-proxy';
 
 import handlePreflight from './preflight';
 
@@ -19,9 +20,15 @@ export default {
 		if (request.method.toLowerCase() === 'options') {
 			return handlePreflight.fetch(request, env, ctx);
 		}
+		if (url.pathname.includes("anthropic")){
+			return handleAntrophic.fetch(request, env, ctx)
+		}
 		if (url.pathname.includes('gemini')) {
 			return handleGemini.fetch(request, env, ctx);
 		}
+
 		return handleOpenAI.fetch(request, env, ctx);
 	}
+
+	//api.anthropic.com/v1/messages
 };
